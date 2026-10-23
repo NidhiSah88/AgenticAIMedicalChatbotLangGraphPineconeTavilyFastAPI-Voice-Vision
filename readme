@@ -1,0 +1,178 @@
+
+
+
+https://www.youtube.com/watch?v=9AlsksEQuWM
+
+download : SQLite Viewer  for vs code extension
+
+check this using sqlite viewer
+/Users/nidhikumari/Desktop/Medical-Agentic-Chatbot-dbunny/backend/medical_memory.db
+
+
+conda create -n project python=3.11 -y
+
+conda activate project
+
+pip install -r requirements.txt
+
+add  .env
+
+# Edit .env with real API keys
+
+python ingest.py --pdf data/medical_book.pdf
+
+uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
+
+RUN :
+cd frontend-ai
+npm run dev
+cd backend 
+
+uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
+
+PINECONE: https://app.pinecone.io/organizations/-P3yE2afSG5l_roUiUnh/projects/b41a6ae0-bc4c-4b34-a858-bb8e613ecc87/indexes
+TAVILY:
+
+
+cd backend
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+cp .env.example .env
+
+
+python -m pip install PyMuPDF
+
+
+python -c "from app.config import settings; print('Index:', settings.pinecone_index); print('OpenAI configured:', bool(settings.openai_api_key)); print('Pinecone configured:', bool(settings.pinecone_api_key))"
+
+Index: medical-agentic-chatbot
+OpenAI configured: True
+Pinecone configured: True
+
+
+
+
+
+python -m pip install groq
+
+cd backend
+
+python3.11 -m venv .venv
+source .venv/bin/activate
+
+python -m pip install --upgrade pip
+
+
+pip install groq pinecone pymupdf sentence-transformers python-dotenv pydantic-settings tavily-python fastapi uvicorn certifi
+
+
+Verify the Python version and installed packages:
+
+python --version
+python -m pip show groq pinecone sentence-transformers
+
+python -m app.ingest --pdf data/medical_book.pdf
+
+python -m pip install groq pinecone sentence-transformers pymupdf python-dotenv pydantic-settings tavily-python certifi
+
+
+python -m pip show groq
+python -c "from groq import Groq; print('Groq installed successfully')"
+
+Agents.py
+source .venv/bin/activate
+python -m pip install langchain-groq
+
+verify dependencies:
+python -m pip install langgraph langgraph-checkpoint-sqlite tavily-python
+python -c "from langchain_groq import ChatGroq; print('Groq integration installed')"
+
+
+
+
+test.py
+
+python -m pip install langchain-groq
+
+python test.py
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights: 100%|████████████████████████| 103/103 [00:00<00:00, 5806.08it/s]
+Final Result: {'question': 'What causes headaches?', 'history': [], 'image_description': '', 'kb': [{'page': 303, 'text': 'Purpose Migraine headaches usually cause a throbbing pain on one side of the head. Nausea, vomiting, dizziness, increased sensitivity to light and sound, and other symp- toms may accompany the pain. The attacks may last for several hours or for a day or more and may come as often as several times a week. Some people who get migraine headaches have warning signals before the headaches begin, such as restlessness, tingling in an arm or leg, or seeing patterns of flashing lights. This set of signals is called an aura. The antimigraine drugs discussed in this section are meant to be taken as soon as the pain begins, to relieve the pain and other symptoms. Other types of drugs, such as antiseizure medicines, antidepressants, calcium channel blockers and beta blockers, are some- times prescribed to prevent attacks in people with very severe or frequent migraines. Description Migraine is thought to be caused by electrical and chemical imbalances in certain parts of the brain. These imbalances affect the blood vessels in the brain—first tightening them up, then widening them. As the blood ve', 'score': 0.643, 'source': 'medical_book.pdf'}, {'page': 372, 'text': 'Although the malformation itself lacks capillaries, there is often an abnormal proliferation of capillaries next to the defect. These blood vessels feed into the mal- formation, causing it to grow larger in some cases. As the AVM receives more blood through this “steal,” adjacent brain tissue does not receive enough. These areas show abnormal nerve cell growth, cell death, and deposits of calcium in that area (calcification). Nerve cells within the malformation may demonstrate abnormal growth and are believed to be nonfunctional. Causes and symptoms Most people do not realize that they have an AVM unless it hemorrhages enough to produce symptoms. Small AVMs are more likely to hemorrhage. If a hemor- rhage occurs, it produces a sudden, severe headache. The headache may be focused in one specific area or it may be more general. It can be mistaken for a migraine in some cases. The headache is accompanied by other symptoms, such as vomiting, a stiff neck, sleepiness, lethargy, confusion, irritability, or weakness anywhere in the body. Seizures occur in about a quarter of AVM cases. A per', 'score': 0.5, 'source': 'medical_book.pdf'}, {'page': 585, 'text': 'no evidence that head injury causes brain tumors, but researchers are trying to determine the relationship, if any, between brain tumors and viruses, family history, and long-term exposure to electromagnetic fields. Symptoms do not usually appear until the tumor grows large enough to displace, damage, or destroy deli- cate brain tissue. When that happens, the patient may experience: • headaches that become increasingly painful and are most painful when lying down • nausea and vomiting or sudden attacks of vomiting not accompanied by nausea • seizures • dizziness, loss of coordination or balance • personality changes • sudden loss of vision • memory loss • speech problems • sensory changes • mental impairment • weakness or paralysis on one side of the body A doctor should be notified whenever a patient expe- riences one or more of the symptoms. Diagnosis Although brain tumor symptoms resemble those of many other illnesses, the presence of a brain tumor may be indicated by: • persistent headaches with vomiting or convulsions • progressive deterioration of sight, speech, hearing, touch;', 'score': 0.48, 'source': 'medical_book.pdf'}, {'page': 73, 'text': 'e high blood pressure, headache, pal- pitations, and excessive perspiration. Although these can- cers can happen at any age, most occur in young adults. Causes and symptoms It is not known what causes adrenal gland cancer, but some cases are associated with hereditary diseases. GALE ENCYCLOPEDIA OF MEDICINE 2 59 Adrenal gland cancer', 'score': 0.46, 'source': 'medical_book.pdf'}, {'page': 206, 'text': ' headache following a spinal or epidural block. This headache is severe when the patient is upright and hardly felt when the patient lies down. Though rare, it can occur and can be treated by perform- ing a blood patch, in which a small amount of the patient’s own blood is injected into the area in the back where the anesthetic was injected. The blood clots and closes up any area that may have been leaking spinal fluid. Relief is almost immediate. Finally, blood clots or abscess can form in the back, but these are also readily treatable and so pose little risk. KEY TERMS Canker sore—A painful sore inside the mouth. Cold sore—A small blister on the lips or face, caused by a virus. Also called a fever blister. Epidural space—The space surrounding the spinal fluid sac. Malignant hyperthermia—A type of reaction (probably with a genetic basis) that can occur dur- ing general anesthesia in which the patient experi- ences a high fever, the muscles become rigid, and the heart rate and blood pressure fluctuate. Subarachnoid space—The space surrounding the spinal cord that is filled with cereb', 'score': 0.445, 'source': 'medical_book.pdf'}], 'web': [], 'answer': '**Short answer**  \nHeadaches can arise from many different mechanisms.  In most people they are **primary** (the headache itself is the disorder) and are related to muscle tension, vascular‑neural changes, or neuro‑chemical fluctuations.  Less often they are **secondary** to another medical problem such as infection, bleeding, tumor, medication effect, or systemic disease.  Because the underlying cause is often uncertain, the clinician’s job is to look for “red‑flag” features that suggest a serious secondary cause and, when needed, order appropriate imaging or laboratory tests.\n\n---\n\n## 1.  Broad categories of causes  \n\n| Category | Typical mechanisms | Common examples |\n|----------|-------------------|-----------------|\n| **Primary headaches** (no underlying disease) | • **Tension‑type** – muscle‑fiber tension, peripheral nociceptor activation in scalp/neck muscles.<br>• **Migraine** – cortical spreading depression, trigeminovascular activation, release of vasoactive neuropeptides (e.g., CGRP) → transient dilation of meningeal vessels and neurogenic inflammation.<br>• **Cluster / trigeminal autonomic cephalalgias** – hypothalamic dysregulation, parasympathetic activation causing lacrimation, nasal congestion. | • Daily or episodic “pressing” pain, often bilateral (tension).<br>• Throbbing, unilateral pain with nausea, photophobia, aura (migraine).<br>• Severe unilateral orbital pain with tearing, nasal congestion (cluster). |\n| **Secondary headaches** (symptom of another condition) | • **Vascular** – subarachnoid hemorrhage, cerebral venous sinus thrombosis, arterial dissection.<br>• **Infectious** – meningitis, encephalitis, sinusitis, dental infection.<br>• **Neoplastic** – primary brain tumor, metastasis (often progressive, worse when lying down).<br>• **Traumatic** – post‑concussive headache, CSF leak after lumbar puncture or spinal anesthesia (orthostatic headache).<br>• **Metabolic / systemic** – hypertension crisis, hypoxia, anemia, thyroid disease, electrolyte imbalance.<br>• **Medication‑related** – overuse of analgesics, withdrawal from caffeine, nitroglycerin, vasoactive drugs.<br>• **Other** – giant cell arteritis, intracranial pressure changes, hormonal fluctuations (menstrual migraine). | • Sudden “worst‑ever” thunderclap headache (subarachnoid bleed).<br>• Headache with fever, neck stiffness (meningitis).<br>• Progressive daily headache with vomiting, visual changes (possible tumor).<br>• Headache that improves when lying flat and worsens upright after spinal tap (CSF leak). |\n\n*The historical PDF you provided mentions migraine pathophysiology (electrical/chemical imbalance → vessel constriction then dilation) and a post‑spinal‑anesthetic orthostatic headache, both of which remain consistent with current understanding, but the text is dated (2002) and does not reflect newer concepts such as CGRP‑targeted therapies or updated red‑flag criteria.*\n\n---\n\n## 2.  How clinicians usually approach a new headache  \n\n1. **History – “red‑flag” questions**  \n   - Onset: sudden (“thunderclap”) vs. gradual?  \n   - Age of first onset (new headache after age\u202f50 is a red flag).  \n   - Pattern change: worsening frequency/intensity?  \n   - Associated symptoms: fever, neck stiffness, rash, visual loss, focal weakness, seizures, confusion, vomiting, weight loss, night sweats.  \n   - Triggers/relieving factors: posture (orthostatic), Valsalva, alcohol, sleep, stress.  \n   - Medication use: daily analgesics, recent new drugs, caffeine withdrawal.  \n   - Past medical history: hypertension, cancer, clotting disorders, recent head/neck trauma, recent spinal procedures.  \n\n2. **Physical exam**  \n   - Vital signs (especially blood pressure, fever).  \n   - Neurologic exam (cranial nerves, motor/sensory, coordination, gait).  \n   - Neck stiffness, papilledema, temporal artery tenderness.  \n\n3. **When to seek urgent care / call emergency services**  \n   - Sudden severe (“worst ever”) headache.  \n   - New headache with fever, neck stiffness, altered mental status.  \n   - Focal neurologic deficits (weakness, speech change, vision loss).  \n   - Headache with trauma and loss of consciousness.  \n   - Headache with signs of increased intracranial pressure (vomiting, papilledema).  \n   - Suspected giant cell arteritis (new temporal headache in >50\u202fy with jaw claudication, visual symptoms).  \n\n4. **Typical next steps for non‑emergent headaches**  \n   - If primary (tension‑type, migraine, cluster) and no red flags → trial of acute therapy (e.g., NSAID, triptan for migraine) and lifestyle measures.  \n   - If secondary cause suspected → imaging (CT head non‑contrast for acute bleed; MRI/MRA for vascular or neoplastic concerns) and/or labs (CBC, ESR/CRP, metabolic panel).  \n   - Consider referral to neurology or headache specialist for refractory or atypical patterns.  \n\n---\n\n## 3.  Common primary headache triggers (often modifiable)\n\n| Trigger | Typical effect |\n|---------|----------------|\n| **Stress / muscle tension** | Increases scalp/neck muscle tone → tension‑type headache. |\n| **Sleep deprivation / irregular schedule** | Lowers pain threshold, can precipitate migraine. |\n| **Hormonal changes** (menstruation, pregnancy, menopause) | Fluctuations in estrogen can trigger migraine. |\n| **Dietary factors** (caffeine, alcohol, tyramine‑rich foods, nitrites) | Can provoke migraine or cluster attacks. |\n| **Environmental** (bright light, loud noise, strong odors) | Photophobia/phonophobia in migraine; can worsen tension headache. |\n| **Medication overuse** (≥10\u202fdays/month of analgesics) | Leads to medication‑overuse headache. |\n| **Weather/altitude changes** | May affect vascular tone, especially in migraine. |\n\n---\n\n## 4.  When to follow up with a clinician  \n\n- **New or changed headache pattern** (especially after age\u202f50).  \n- **Any red‑flag symptom** listed above.  \n- **Headache that interferes with daily activities** despite OTC treatment.  \n- **Headache that wakes you from sleep** or is **worse when lying down** (possible increased intracranial pressure).  \n- **Persistent daily headache** >\u202f4\u202fweeks without clear cause.  \n\n---\n\n## 5.  Key take‑away points  \n\n1. **Headaches are common** and most are benign primary types, but they can also signal serious disease.  \n2. **Ask about red‑flag features** and seek emergency care if they are present.  \n3. **Identify triggers** and consider lifestyle or pharmacologic strategies for primary headaches.  \n4. **If you are uncertain** or the headache is new, worsening, or associated with systemic/neurologic signs, **schedule a medical evaluation**.  \n\n---\n\n### References (current, reputable sources)\n\n1. **American Headache Society – Clinical Practice Guidelines** (2021). *American Headache Society Guideline for the Acute Treatment of Migraine*. https://americanheadachesociety.org  \n2. **Mayo Clinic**. “Headache.” Updated 2023. https://www.mayoclinic.org/diseases-conditions/headache/symptoms-causes/syc-20353984  \n3. **National Institute of Neurological Disorders and Stroke (NINDS)**. “Headache.” 2022. https://www.ninds.nih.gov/Disorders/All-Disorders/Headache-Information-Page  \n4. **UpToDate** (subscription‑based, accessed Oct\u202f2026). “Evaluation of the adult with a new headache.” https://www.uptodate.com/contents/evaluation-of-the-adult-with-a-new-headache  \n5. **Gale Encyclopedia of Medicine (2002)** – historical perspective on migraine and post‑spinal‑anesthetic headache (cited for context only; newer data supersede many details).  \n\n*Please remember that this information is educational and not a substitute for a professional medical evaluation.*', 'route': 'answer'}
+(.venv) (base) nidhikumari@Nidhis-MacBook-Pro backend % 
+
+
+
+
+
+main.py
+
+1. Install the missing package
+cd ~/Desktop/Medical-Agentic-Chatbot-dbunny/backend
+
+python3.11 -m pip install langchain-groq groq
+
+
+2. Verify the installation
+
+python3.11 -c "from langchain_groq import ChatGroq; print('Groq integration installed successfully')"
+
+
+for voice search: 
+
+pip install pydantic-settings groq
+
+
+
+RESULT
+
+/Users/nidhikumari/Desktop/Medical-Agentic-Chatbot-dbunny/backend/medical_memory.db
+
+RUN :
+cd frontend-ai
+npm run dev
+cd backend 
+
+uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
+
+
+
+
+
+
+(base) nidhikumari@Nidhis-MacBook-Pro backend % say -o /tmp/voice.aiff "I have a headache and need general medical information."
+(base) nidhikumari@Nidhis-MacBook-Pro backend % afconvert -f WAVE -d LEI16@16000 /tmp/voice.aiff /tmp/voice.wav
+(base) nidhikumari@Nidhis-MacBook-Pro backend % curl -i -X POST \
+  http://localhost:8000/api/transcribe \
+  -H "Authorization: Bearer nk-medical-agentic-chatbot" \
+  -F "file=@/tmp/voice.wav;type=audio/wav"
+HTTP/1.1 200 OK
+date: Thu, 15 Oct 2026 16:30:54 GMT
+server: uvicorn
+content-length: 66
+content-type: application/json
+
+{"text":"I have a headache and need general medical information."}%                        
+(base) nidhikumari@Nidhis-MacBook-Pro backend % ls -lh /tmp/voice.wav
+-rw-r--r--  1 nidhikumari  wheel    83K Oct 15 22:00 /tmp/voice.wav
+(base) nidhikumari@Nidhis-MacBook-Pro backend % 
+
+
+echo "# AgenticAIMedicalChatbotLangGraphPineconeTavilyFastAPI-Voice-Vision" >> README.md
+git init
+git add README.md
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/NidhiSah88/AgenticAIMedicalChatbotLangGraphPineconeTavilyFastAPI-Voice-Vision.git
+git push -u origin main
+
+
+
+
+
+
+
+
+
+
