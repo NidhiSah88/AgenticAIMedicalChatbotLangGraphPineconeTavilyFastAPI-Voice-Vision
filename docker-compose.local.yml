@@ -1,0 +1,29 @@
+services:
+  backend:
+    build: ./backend
+    env_file:
+      - backend/.env
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build:
+      context: ./ai-frontend
+      args:
+        VITE_API_BASE_URL: /api
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+
+
+
+
+
+
+
+
+
+
+
+

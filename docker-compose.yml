@@ -1,0 +1,40 @@
+
+
+services:
+  backend:
+    image: ${ECR_REGISTRY}/${BACKEND_REPOSITORY}:${IMAGE_TAG}
+    restart: unless-stopped
+    env_file:
+      - /opt/medical-chatbot/backend.env
+    expose:
+      - "8000"
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=3)"
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+
+  frontend:
+    image: ${ECR_REGISTRY}/${FRONTEND_REPOSITORY}:${IMAGE_TAG}
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+
+
+
+
+
+
+
+
+
+
+

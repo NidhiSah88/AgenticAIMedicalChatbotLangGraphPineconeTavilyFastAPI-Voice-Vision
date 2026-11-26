@@ -54,6 +54,10 @@ Pinecone configured: True
 
 
 
+
+
+
+
 python -m pip install groq
 
 cd backend
@@ -167,6 +171,34 @@ git branch -M main
 git remote add origin https://github.com/NidhiSah88/AgenticAIMedicalChatbotLangGraphPineconeTavilyFastAPI-Voice-Vision.git
 git push -u origin main
 
+
+
+# OPENAI_API_KEY
+GROQ_API_KEY=
+GROQ_MODEL=openai/gpt-oss-120b
+
+
+# OPENAI_VISION_MODEL=gpt-4.1-mini
+GROQ_VISION_MODEL=
+
+
+# Use a transcription model supported by your Groq account
+GROQ_TRANSCRIPTION_MODEL=
+
+
+PINECONE_API_KEY=
+TAVILY_API_KEY=
+
+EMBED_MODEL=
+
+#  database in pinecone called pincone index 
+PINECONE_INDEX=
+OPENAI_CHAT_MODEL=
+OPENAI_EMBED_MODEL=
+
+# for user authentication and authorization
+API_TOKEN=
+ALLOWED_ORIGINS=
 
 
 

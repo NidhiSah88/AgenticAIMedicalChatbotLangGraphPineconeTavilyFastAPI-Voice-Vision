@@ -1,3 +1,6 @@
+# Defines the LangGraph workflow, routing, web search, and final answer generation	
+# When a chat request invokes the graph
+
 
 import sqlite3
 from typing import TypedDict
@@ -107,19 +110,6 @@ def web_search(state):
     except Exception as exc:
         print(f"Tavily search failed: {exc}")
         return {"web": []}
-
-
-
-# def answer(state):
-#     context = '\n'.join(f"[PDF p.{x['page']}] {x['text']}" for x in state['kb'])
-#     websites = '\n'.join(f"{x['title']} ({x['url']}): {x['content']}" for x in state.get('web',[]))
-#     history=[]
-#     for msg in state.get('history',[])[-8:]:
-#         history.append(HumanMessage(content=msg['content']) if msg['role']=='user' else AIMessage(content=msg['content']))
-#     user = f"Question: {state['question']}\nVisual observations (not diagnosis): {state.get('image_description','None')}\nHistorical PDF excerpts:\n{context or 'No relevant PDF excerpts'}\nExternal results:\n{websites or 'No external results'}"
-#     llm=ChatOpenAI(model=settings.openai_chat_model,temperature=0.1,api_key=settings.openai_api_key,timeout=45,max_retries=1)
-#     response=llm.invoke([SystemMessage(content=SYSTEM),*history,HumanMessage(content=user)])
-#     return {'answer':response.content}
 
 
 def answer(state):

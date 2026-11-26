@@ -1,3 +1,7 @@
+# Exposes HTTP endpoints for chat, image analysis, transcription, and speech	
+# While the FastAPI server is running
+
+
 import base64
 import io
 import secrets
